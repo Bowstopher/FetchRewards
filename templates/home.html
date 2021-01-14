@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Fetch Rewards Text Comparison </title>
+   </head>
+   <body>
+      <h1> Fetch Rewards Text Comparison </h1>
+      <h3> Contact Information </h3>
+      <p> <b>Name:</b> Chris Bowen </p>
+      <p> <b>Email:</b> <a href = "mailto: cdbowen603@gmail.com"?subject="Feedback On Your Flask App">cdbowen603@gmail.com</a></p>
+      <p> <b>Cell:</b> 603-969-8140 </p>
+      <p> 
+      <p> 
+      <p>
+      <h2> Application Information and Endpoints </h2>
+      <p> Hello, and thank you for looking over my application! This was an entertaining app to develop and package up.</p>
+      <p> This information is included in the README.md and README.pdf files as well.</p>
+      <P> </p>
+      <h3> Endpoints </h3>
+      <p> This application contains 3 endpoints, they are described here. </p>
+      <p> <b> 1.) </b> "/" </p>
+      <p style="margin-left: 30px"> The current endpoint you are looking at; just a simple HTML landing page </p>
+      <p> <b> 2.) </b> "/info" </p>
+      <p style="margin-left: 30px">This endpoint returns my decisions to the points made in the assignment. It scrapes data from the 
+                                     <a href = "https://fetch-hiring.s3.amazonaws.com/data-engineer/text-similarity.html" target="_blank">HTML page</a> 
+                                     on your S3 bucket and provides my answers as key:value pairs based on the HTML</p>
+      <p> <b> 3.) </b> "/textsimilarity" </p>
+      <p style="margin-left: 30px"> The actual endpoint that this assignment requested. This endpoint accepts key:value pairs from a POST request. It will accept more than two and returns a similarity comparison between all samples.</p>
+      <p style="margin-left: 30px"> For example, if you provide three samples (s1,s2,s3), the endpoint returns comparisons between s1 and s2, s1 and s3, and s2 and s3.</p>
+
+      <h3> Decisions </h3>
+      <p> <i> Question 1: Do you count punctuation or only words? </i> </p>
+      <p style="margin-left: 30px"> My application does not count punctuation </p> 
+      <p> <i> Question 2: Which words should matter in the similarity comparison?</i> </p>
+      <p style="margin-left: 30px"> My application removes common stop words and only counts each instance of each word once</p> 
+      <p> <i> Question 3: Do you care about the ordering of words?</i> </p>
+      <p style="margin-left: 30px"> My application does not care about the ordering of words</p> 
+      <p> <i> Question 4: What metric do you use to assign a numerical value to the similarity</i> </p>
+      <p style="margin-left: 30px"> Number of matched words divided by total words in both samples</p> 
+      <p> <i> Question 5: What type of data structures should be used?  (Hint: Dictionaries and lists are particularly helpful data structures that can be leveraged to calculate the similarity of two pieces of text.)</i> </p>
+      <p style="margin-left: 30px"> Dictionaries, lists, strings, and tuples are employed</p> 
+
+      <P> </p>
+      <P> </p>
+      <P> </p>
+      <P> </p>
+      
+
+      <h3> Disclaimer </h3>
+      <p> Please excuse my rudimentary HTML- this is not a specialty of mine, but I thought it would be fun to have a landing page for the app. </p>
+   </body>
+</html>
