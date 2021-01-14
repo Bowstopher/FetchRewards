@@ -1,18 +1,20 @@
 # Fetch Rewards App Overview
 ## Dependencies 
-- Developed using Python 3.9
+- Developed using Python 3
 
 ## How to Run This App
 
 You have two choices when running this application. 
 
-### Option 1: Use Docker to run it
-1. Clone the application using GitHub
-2. Navigate to the directory and start the container (example for Windows)
-   - `cd .\FetchRewards`
-   - `docker run FetchRewards
+### Option 1: Use Docker to run it (Example on Windows using Docker Desktop)
+1. Open Docker Desktop 
+2. Clone the application from DockerHub
+3. Find the image *fetchrewards*
+   -  Click RUN on the image
+   -  Specify a port under *Local Host* to run the container on
+4. Interact with the endpoints using your favorite tool(s)
 
-### Option 2: Fire it up using a command line and Python
+### Option 2: Fire it up using a command line and Python (Example on Windows)
 1. Clone the application from GitHub
 2. Create and activate a virtual environment in the app directory
    - `cd .\FetchRewards`
