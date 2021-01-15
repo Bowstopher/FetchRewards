@@ -23,7 +23,7 @@ def app_info():
 def text_similarity():
     from textComps import comp_samples
 
-    data = request.form.to_dict()
+    data = request.json
     ls = []
     for key in data:
         ls.append(key)
@@ -34,8 +34,6 @@ def text_similarity():
         comparison = comp_samples(data[i[0]],data[i[1]]) 
         sample_comps[i[0]+" vs "+i[1]] = comparison
     
-    print(sample_comps)
-
     return sample_comps
 
 

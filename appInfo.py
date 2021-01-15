@@ -15,14 +15,8 @@ def obtain_reqs(URL,list_len,answer_list,list_begin):
     ans = answer_list
     
     info = {}
-    print(strips[start_idx])
-    print("_"*len(strips[start_idx]))
     for i in range(1,list_len+1):
-        print("Question " +str(i)+ ": " +strips[start_idx+i])
-        print("Answer   " +str(i)+ ": " +ans[i-1])
-        info["Question " +str(i)+ ": " +strips[start_idx+i]] = "Answer " +str(i)+ ": " +ans[i-1]
-        print("_"*len(strips[start_idx]))
-        
+        info["Question " +str(i)+ ": " +strips[start_idx+i]] = "Answer " +str(i)+ ": " +ans[i-1]        
     return info
 
 
@@ -32,8 +26,8 @@ def return_info():
            answer_list=["My application does not count punctuation",
                       "My application removes common stop words",
                       "My application does not care about the ordering of words",
-                      "Number of matched words divided by total words in both variables",
-                      "Dictionaries, lists, strings, and tuples are employed"],
+                      "Number of unique matched words divided by total unique words in both samples",
+                      "Dictionaries, lists, sets, and tuples are employed. Sets are used for comparing unique words between two samples and are helpful because they are more performant for lookups than lists."],
            list_begin="You will have to make a number of decisions as you develop this solution:")
 
 

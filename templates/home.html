@@ -28,6 +28,7 @@
       <p> <b> 3.) </b> "/textsimilarity" </p>
       <p style="margin-left: 30px"> The actual endpoint that this assignment requested. This endpoint accepts key:value pairs from a POST request. It will accept more than two and returns a similarity comparison between all samples.</p>
       <p style="margin-left: 30px"> For example, if you provide three samples (s1,s2,s3), the endpoint returns comparisons between s1 and s2, s1 and s3, and s2 and s3.</p>
+      <p style="margin-left: 30px"> More detailed information on this endpoint can be found in the README document </p>
 
       <h3> Decisions </h3>
       <p> <i> Question 1: Do you count punctuation or only words? </i> </p>
@@ -37,9 +38,9 @@
       <p> <i> Question 3: Do you care about the ordering of words?</i> </p>
       <p style="margin-left: 30px"> My application does not care about the ordering of words</p> 
       <p> <i> Question 4: What metric do you use to assign a numerical value to the similarity</i> </p>
-      <p style="margin-left: 30px"> Number of matched words divided by total words in both samples</p> 
+      <p style="margin-left: 30px"> Number of unique matched words divided by total unique words in both samples</p> 
       <p> <i> Question 5: What type of data structures should be used?  (Hint: Dictionaries and lists are particularly helpful data structures that can be leveraged to calculate the similarity of two pieces of text.)</i> </p>
-      <p style="margin-left: 30px"> Dictionaries, lists, strings, and tuples are employed</p> 
+      <p style="margin-left: 30px"> Dictionaries, lists, sets, and tuples are employed. Sets are used for comparing unique words between two samples and are helpful because they are more performant for lookups than lists.</p> 
 
       <P> </p>
       <P> </p>

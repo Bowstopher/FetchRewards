@@ -11,7 +11,8 @@ You have two choices when running this application.
 2. Clone the application from DockerHub
 3. Find the image *fetchrewards*
    -  Click RUN on the image
-   -  Specify a port under *Local Host* to run the container on
+   -  Specify a port under *Local Host* to run the container on (for example, `5000`)
+   - The container should now be running on `127.0.0.1:5000`
 4. Interact with the endpoints using your favorite tool(s)
 
 ### Option 2: Fire it up using a command line and Python (Example on Windows)
@@ -23,6 +24,8 @@ You have two choices when running this application.
    - `pip install -r requirements.txt`
 3. Activate the application
    - `python main.py`
+   - By default, Flask will start on port `5000`; you can verify this on the terminal output
+   - The application should now be running on `127.0.0.1:5000`
 4. Interact with the endpoints using your favorite tool(s)
 
 ## Endpoints
@@ -54,13 +57,20 @@ This endpoint accepts GET requests.
 
 `/textsimilarity`
 
-This endpoint accepts key:value pairs from a POST request. It will accept more than two pairs and returns a similarity comparison between all samples that ranges between 0 and 1.
-
-This endpoint accepts POST requests in the format {key:value}.
+This endpoint accepts JSON from a POST request. It will accept more than two text samples and returns a similarity comparison between all samples. The similarity metric ranges between 0 and 1; a score of 0 means no words match while a score of 1 means they are a perfect match.
 
 For example, if you provide three samples (s1,s2,s3), the endpoint returns comparisons between s1 and s2, s1 and s3, and s2 and s3.
 
-### Example response JSON
+### Example Request 
+```json
+{
+   "Sample 1": "The easiest way to earn points with Fetch Rewards is to just shop for the products you already love. If you have any participating brands on your receipt, you'll get points based on the cost of the products. You don't need to clip any coupons or scan individual barcodes. Just scan each grocery receipt after you shop and we'll find the savings for you.",
+   "Sample 2": "The easiest way to earn points with Fetch Rewards is to just shop for the items you already buy. If you have any eligible brands on your receipt, you will get points based on the total cost of the products. You do not need to cut out any coupons or scan individual UPCs. Just scan your receipt after you check out and we will find the savings for you.",
+   "Sample 3": "We are always looking for opportunities for you to earn more points, which is why we also give you a selection of Special Offers. These Special Offers are opportunities to earn bonus points on top of the regular points you earn every time you purchase a participating brand. No need to pre-select these offers, we'll give you the points whether or not you knew about the offer. We just think it is easier that way."
+}
+```
+
+### Example Response
 ```json
 {
     "Sample 1 vs Sample 2": "Similarity between two provided samples is: 0.7692307692307693",
@@ -86,8 +96,8 @@ For example, if you provide three samples (s1,s2,s3), the endpoint returns compa
 
 - Question 4: What metric do you use to assign a numerical value to the similarity
 
-   - Number of matched words divided by total words in both variables
+   - Number of unique matched words divided by total unique words in both samples
 
 - Question 5: What type of data structures should be used? (Hint: Dictionaries and lists are particularly helpful data structures that can be leveraged to calculate the similarity of two pieces of text.)
 
-   - Dictionaries, lists, strings, and tuples are employed
+   - Dictionaries, lists, sets, and tuples are employed. Sets are used for comparing unique words between two samples and are helpful because they are more performant for lookups than lists.
